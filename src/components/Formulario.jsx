@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Error from './Error';
+import Swal from 'sweetalert2';
 
 const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
   const [nombre, setNombre] = useState('');
@@ -46,6 +47,7 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
 
     if (paciente.id) {
       // Modo de edición
+
       objetoPaciente.id = paciente.id;
 
       const pacientesActualizados = pacientes.map((pacienteState) =>
@@ -53,10 +55,25 @@ const Formulario = ({ pacientes, setPacientes, paciente, setPaciente }) => {
       );
       setPacientes(pacientesActualizados);
       setPaciente({});
+
+      Swal.fire({
+        icon: 'success',
+        toast: true,
+        title: 'Datos actualizados con éxito',
+        showConfirmButton: false,
+        timer: 1500,
+      });
     } else {
       // Nuevo registro
       objetoPaciente.id = generarID();
       setPacientes([...pacientes, objetoPaciente]);
+      Swal.fire({
+        icon: 'success',
+        toast: true,
+        title: 'Cliente registrado con éxito',
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
 
     // Reiniciar el formulario
