@@ -7,7 +7,7 @@ const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => {
       {pacientes && pacientes.length ? (
         <>
           <h2 className="font-black text-3xl text-center">Listado Pacientes</h2>
-          <p className="text-xl mt-4 text-center mb-10">
+          <p className="text-lg mt-4 text-center mb-10">
             Administra tus{' '}
             <span className="text-indigo-600 font-bold">Pacientes y Citas</span>
           </p>
@@ -25,7 +25,7 @@ const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => {
           <h2 className="font-black text-3xl text-center">
             Actualmente no hay pacientes
           </h2>
-          <p className="text-xl mt-4 text-center mb-10">
+          <p className="text-lg mt-4 text-center mb-10">
             Prueba agregando unos y se mostraran{' '}
             <span className="text-indigo-600 font-bold">aquí</span>
           </p>
